@@ -54,7 +54,12 @@ const checkLocalStorage = function () {
     else View.renderTodo(model.state.allTodos)
 }
 
-const init = function () {
+const runQuote = async function () {
+    const data = await model.getQuote()
+    View.changeQuote(data)
+}
+
+const init = async function () {
     //Check local storage if there's a data from before
     checkLocalStorage()
     //Add event listeners
@@ -63,5 +68,7 @@ const init = function () {
     View.addHandlerCompleteTodo(completeTodo)
     View.addHandlerFilterTodo(filterTodos)
     View.addHandlerChangeMode(changeMode)
+    runQuote()
+    setInterval(async () => runQuote(), 10000)
 }
 init()

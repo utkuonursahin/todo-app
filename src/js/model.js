@@ -55,3 +55,12 @@ export const getLocalStorage = function () {
     state.allTodos = JSON.parse(localStorage.getItem('todos'))
     if (!state.allTodos) state.allTodos = []
 }
+
+export const getQuote = async function () {
+    try {
+        const response = await fetch('https://api.quotable.io/random');
+        return await response.json()
+    } catch (err) {
+        console.log(err)
+    }
+}

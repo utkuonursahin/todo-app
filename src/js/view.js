@@ -96,6 +96,12 @@ class View {
         new Sortable(dragArea, options)
     }
 
+    changeQuote(data) {
+        const text = document.querySelector('.header__quote--text')
+        const author = document.querySelector('.header__quote--author')
+        text.innerHTML = `${data.content}`
+        author.innerHTML = `- ${data.author}`
+    }
 }
 
 export default new View()
