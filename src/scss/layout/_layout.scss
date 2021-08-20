@@ -1,0 +1,131 @@
+@use "../abstracts" as abs;
+.container{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 45vh min-content;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    background-color: var(--color-mainBackground);
+}
+
+.header{
+    width: 100%;
+    height: 100%;
+    background-image: url("/src/images/bg-desktop-light.jpg");
+    background-size: cover;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(3rem,30rem) minmax(80vw,1fr) minmax(3rem,30rem);
+    grid-template-rows: repeat(2,1fr);
+    justify-items: center;
+    @media only screen and (max-width:abs.$bp-500){background-image: url("/src/images/bg-mobile-light.jpg");}
+    //../../
+    &__container{
+        width: 50%;
+        height: 15rem;
+        grid-column: 2 / 3;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media only screen and (max-width:abs.$bp-900){width: 90%;}
+        @media only screen and (max-width:abs.$bp-500){width: 100%;}
+        &--mode{
+            width: 3rem;
+            height: 3rem;
+            object-fit: cover;
+            margin-top: -2rem;
+        }
+    }
+
+    &__inputs{
+        align-self: start;
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        width: 50%;
+        padding: 1rem 3rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background-color: var(--color-todoBackground);
+        border-radius: 1rem;
+        @media only screen and (max-width:abs.$bp-900){width: 90%;}
+        @media only screen and (max-width:abs.$bp-500){width: 100%; padding: .5rem 1.5rem;}
+        &--text{
+            height: 5rem;
+            width: 90%;
+            border: none;
+            font-size: 1.8rem;
+            letter-spacing: 1.2px;
+            color: var(--color-textHover);
+            background-color: var(--color-todoBackground);
+            &:focus{outline: none;}
+        }
+    }
+
+}
+
+.main{
+    grid-row: 2 / 3;
+    min-height: 55vh;
+    display: grid;
+    grid-template-columns: minmax(3rem,20rem) minmax(80vw,1fr) minmax(3rem,20rem);;
+    grid-template-rows: repeat(2,min-content);
+    justify-items: center;
+    &__text{
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        font-size: 2rem;
+        color: hsl(236, 9%, 61%);
+        margin: 4rem 0;
+        @media only screen and (max-height:21.875em){display: none;}
+    }
+}
+
+.todobox{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    width: 50%;
+    margin-top: -3rem;
+    border-radius: 1rem;
+    background-color: var(--color-todoBackground);
+    display: flex;
+    flex-direction: column;
+    @media only screen and (max-width:abs.$bp-900){width: 90%;}
+    @media only screen and (max-width:abs.$bp-500){width: 100%; margin-top: -3rem;}
+    @media only screen and (max-height:21.875em){transform: translateY(25%); margin-top: 2rem;}
+    @media only screen and (max-height:18.75em){display: none;}
+
+    &__list{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+
+        &--item{
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem 3rem;
+            border-bottom: 1px solid rgb(158, 158, 158);
+            cursor: pointer;
+
+            &--img{margin-left: auto; display: none}
+            &--text{font-size: 2.5rem; color: var(--color-textHover);}
+            &:focus-within > &--img{display: block}
+        }
+
+    }
+
+    &__manage{
+        padding: 1rem 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        &--items{
+            color: var(--color-buttons);
+            font-size: 1.6rem;
+            white-space: nowrap;
+            @media only screen and (max-width:abs.$bp-400){display: none;}
+        }
+    }
+}

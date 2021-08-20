@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="src/images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/scss/main.scss">
+  <script defer src="./src/js/controller.js"></script>
+  <title>Frontend Mentor | Todo app</title>
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header__container">
+        <h1 class="heading-1">TODO</h1>
+        <img src="src/images/icon-moon.svg" alt="Darkmode icon" class="header__container--mode">
+      </div>
+      <div class="header__inputs">
+        <input type="checkbox" id="checkbox--addTodo">
+        <label for="checkbox--addTodo" class="checkbox"></label>
+        <input type="text" class="header__inputs--text" id="text--addTodo" placeholder="Create a new todo...">
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="todobox hidden">
+        <ul class="todobox__list">
+          <!-- <li class="todobox__list--item" tabindex="1">
+            <input type="checkbox" id="checkbox--completeTodo-2">
+            <label for="checkbox--completeTodo-2" class="checkbox"></label>
+            <span class="todobox__list--item--text">Read for 1 hour</span>
+            <img src="./src/images/icon-cross.svg" alt="Close icon" class="todobox__list--item--img btn--close">
+          </li> -->
+        </ul>
+
+        <!-- <div class="todobox__manage">
+          <span class="todobox__manage--items">X items left</span>
+          <button class="btn btn--text btn--all" data-type="all">All</button>
+          <button class="btn btn--text btn--active" data-type="active">Active</button>
+          <button class="btn btn--text btn--completed" data-type="completed">Completed</button>
+          <button class="btn btn--text btn--clearAll" data-type="clear">Clear Completed</button>
+        </div> -->
+
+      </div>
+
+      <span class="main__text">Drag and drop to reorder list</span>
+    </main>
+
+  </div>
+
+
+</body>
+
+</html>

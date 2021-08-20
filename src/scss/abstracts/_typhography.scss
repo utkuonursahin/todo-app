@@ -1,0 +1,8 @@
+@use "./colors" as abs;
+$font-primary:'Josefin Sans', sans-serif;
+
+.heading-1{
+    font-size: 5rem;
+    letter-spacing: 2rem;
+    color: hsl(0, 0%, 98%);
+}

@@ -1,0 +1,56 @@
+@use "../abstracts" as abs;
+.hidden{display: none;}
+
+.completed{
+    opacity: .4; 
+    text-decoration: line-through;
+}
+
+.todo--choose{
+    transform: translateY(-1rem) scaleX(1.05);
+    background-image: linear-gradient(to right bottom,rgb(167, 117, 191), rgb(69, 88, 176));
+    transition: transform .25s ease-in-out;
+    border-radius: 1rem;
+}
+.todo--ghost{opacity: 1;}
+.todo--drag{opacity: 0;}
+input[type = 'checkbox']{
+    display: none;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+
+    &:checked + .checkbox{
+        background-image:  
+            url("../../src/images/icon-check.svg"),
+            linear-gradient(to right bottom,var(--color-checkBackground));
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+    }
+
+    &:checked ~ .todobox__list--item--text{text-decoration: line-through;}
+}
+
+.checkbox{
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background-position: center;
+    border: 1px solid rgb(158, 158, 158);
+    @media only screen and (max-width:abs.$bp-500){height: 3rem; width: 3rem;}
+}
+
+.btn{
+    border: none;
+    background-color:transparent;
+    font-size: 1.6rem;
+    font-weight: 700;
+
+    @media only screen and (max-width:abs.$bp-500){font-size: 1.3rem;}
+
+    &--all{color: var(--color-brightBlue); margin-left: auto;}
+    &--active,&--completed{color: var(--color-buttons);&:hover{color: var(--color-textHover);}}
+    &--clearAll{color: var(--color-buttons); margin-left: auto; font-weight: 400;&:hover{color: var(--color-textHover);}}
+
+}

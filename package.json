@@ -1,0 +1,24 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "Todo app",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --out-dir ./dist"
+  },
+  "author": "Utku Sahin",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.14.7",
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.38.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.14.6",
+    "core-js": "^3.15.2",
+    "regenerator-runtime": "^0.13.7",
+    "sortablejs": "^1.14.0"
+  }
+}

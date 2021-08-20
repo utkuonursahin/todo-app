@@ -1,0 +1,19 @@
+@use "../abstracts" as abs;
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    @media only screen and (max-width:abs.$bp-400){font-size: 56.25%;}
+}
+
+body{
+    font-family:abs.$font-primary;
+    font-weight: 400;
+}
